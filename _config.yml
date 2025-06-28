@@ -3,7 +3,6 @@ title: Starklicht
 description: Starklicht Documentation
 
 theme: jekyll-theme-minimal
-collections_dir: .
 
 collections:
   wiki_stm32:
