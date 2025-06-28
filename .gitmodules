@@ -1,0 +1,6 @@
+[submodule "wiki_stm32"]
+	path = wiki_stm32
+	url = https://github.com/starklicht/starklicht-stm32.wiki.git
+[submodule "wiki_app"]
+	path = wiki_app
+	url = https://github.com/starklicht/starklicht-app.wiki.git
