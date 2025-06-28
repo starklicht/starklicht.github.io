@@ -1,1 +1,13 @@
 
+title: Starklicht
+description: Starklicht Documentation
+
+theme: jekyll-theme-minimal
+
+collections:
+  wiki_stm32:
+    output: true
+    permalink: /stm32/:path/
+  wiki_app:
+    output: true
+    permalink: /app/:path/
