@@ -22,6 +22,8 @@ jobs:
             filename=$(basename "$file")
             echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_wiki_stm32/$filename"
           done
+          ls -R _wiki_stm32_temp
+          ls -R _wiki_stm32
 
       - name: Clone App Wiki
         run: |
@@ -31,6 +33,8 @@ jobs:
             filename=$(basename "$file")
             echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_wiki_app/$filename"
           done
+          ls -R _wiki_app_temp
+          ls -R _wiki_app
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
