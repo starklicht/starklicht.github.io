@@ -1,2 +1,2 @@
 # starklicht.github.io
-Pages
+Pages!
