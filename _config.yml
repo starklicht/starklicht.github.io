@@ -4,10 +4,6 @@ description: Starklicht Documentation
 
 theme: jekyll-theme-minimal
 
-exclude:
-  - wiki_app
-  - wiki_stm32
-
 collections:
   wiki_stm32:
     output: true

@@ -19,15 +19,15 @@ jobs:
 
       - name: Add Jekyll Front Matter to Wiki Files
         run: |
-          mkdir -p _collections/wiki_stm32
+          mkdir -p _wiki_stm32
           for file in wiki_stm32/*.md; do
             filename=$(basename "$file")
-            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_collections/wiki_stm32/$filename"
+            echo -e "---\nlayout: wiki\n---\n$(cat \"$file\")" > "_wiki_stm32/$filename"
           done
-          mkdir -p _collections/wiki_app
+          mkdir -p _wiki_app
           for file in wiki_app/*.md; do
             filename=$(basename "$file")
-            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_collections/wiki_app/$filename"
+            echo -e "---\nlayout: wiki\n---\n$(cat \"$file\")" > "_wiki_app/$filename"
           done
 
       - name: Clean up original wiki directories
@@ -36,7 +36,7 @@ jobs:
           rm -rf wiki_app
 
       - name: List generated wiki files (for debugging)
-        run: ls -R _collections/wiki_stm32 _collections/wiki_app
+        run: ls -R _wiki_stm32 _wiki_app
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
