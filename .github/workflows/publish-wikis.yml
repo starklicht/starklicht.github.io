@@ -13,28 +13,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0 # Fetch all history for all branches and tags
 
-      - name: Clone STM32 Wiki
+      - name: Add Jekyll Front Matter to Wiki Files
         run: |
-          git clone https://github.com/starklicht/starklicht-stm32.wiki.git _wiki_stm32_temp
-          mkdir -p _collections/wiki_stm32
-          for file in _wiki_stm32_temp/*.md; do
+          mkdir -p _wiki_stm32
+          for file in wiki_stm32/*.md; do
             filename=$(basename "$file")
-            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_collections/wiki_stm32/$filename"
+            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_wiki_stm32/$filename"
           done
-          ls -R _wiki_stm32_temp
-          ls -R _collections/wiki_stm32
-
-      - name: Clone App Wiki
-        run: |
-          git clone https://github.com/starklicht/starklicht-app.wiki.git _wiki_app_temp
-          mkdir -p _collections/wiki_app
-          for file in _wiki_app_temp/*.md; do
+          mkdir -p _wiki_app
+          for file in wiki_app/*.md; do
             filename=$(basename "$file")
-            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_collections/wiki_app/$filename"
+            echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_wiki_app/$filename"
           done
-          ls -R _wiki_app_temp
-          ls -R _collections/wiki_app
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
