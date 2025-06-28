@@ -13,4 +13,4 @@ collections:
     permalink: /app/:path/
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://starklicht.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://starklicht.github.io"
