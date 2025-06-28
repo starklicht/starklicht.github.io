@@ -30,6 +30,9 @@ jobs:
             echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_wiki_app/$filename"
           done
 
+      - name: List generated wiki files (for debugging)
+        run: ls -R _wiki_stm32 _wiki_app
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
