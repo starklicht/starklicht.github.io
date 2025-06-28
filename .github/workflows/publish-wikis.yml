@@ -30,6 +30,11 @@ jobs:
             echo -e "---\nlayout: wiki\n---\n$(cat "$file")" > "_collections/wiki_app/$filename"
           done
 
+      - name: Clean up original wiki directories
+        run: |
+          rm -rf wiki_stm32
+          rm -rf wiki_app
+
       - name: List generated wiki files (for debugging)
         run: ls -R _collections/wiki_stm32 _collections/wiki_app
 
